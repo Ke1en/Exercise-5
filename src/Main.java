@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
@@ -23,7 +24,7 @@ public class Main {
         */
 
         // Одномерные массивы
-        System.out.println("Одномерные массивы");
+        /*System.out.println("Одномерные массивы");
         int[] numArray = {1, 2, 3, 4, 5};
 
         System.out.println("Первый вывод");
@@ -36,10 +37,10 @@ public class Main {
             System.out.println(numArray[i]);
 
         }
-        System.out.println("Array length " + numArray.length);
+        System.out.println("Array length " + numArray.length);*/
 
         // Двумерные массивы
-        System.out.println("Двумерные массивы");
+        /*System.out.println("Двумерные массивы");
         int[][] numMatrix = {{1, 2, 3}, {3, 4, 5}, {5, 6, 7}};
         System.out.println(numMatrix[2][0]);
 
@@ -55,7 +56,26 @@ public class Main {
             for (int j = 0; j < numMatrix[i].length; j++) {
                 System.out.println(numMatrix[i][j]);
             }
-        }
+        }*/
+        // Заполнить двумерный массив случайными числами и найти среднее арифметическое
+        int rows = 7;
+        int cols = 3;
+        int result = 0;
+        double resultAverage;
+        int[][] numMatrix = new int[rows][cols];
 
+        Random random = new Random();
+
+        for (int i = 0; i < numMatrix.length; i++) {
+            for (int j = 0; j < numMatrix[i].length; j++) {
+                numMatrix[i][j] = random.nextInt(100);
+                result+=numMatrix[i][j];
+                System.out.print(numMatrix[i][j] + " ");
+            }
+            System.out.println();
+        }
+        resultAverage = (double) result / (rows*cols);
+
+        System.out.println("Среднее арифметическое: " + resultAverage);
     }
 }
