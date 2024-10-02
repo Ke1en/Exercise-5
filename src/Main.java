@@ -58,7 +58,7 @@ public class Main {
             }
         }*/
         // Заполнить двумерный массив случайными числами и найти среднее арифметическое
-        int rows = 7;
+        /*int rows = 7;
         int cols = 3;
         int result = 0;
         double resultAverage;
@@ -76,6 +76,25 @@ public class Main {
         }
         resultAverage = (double) result / (rows*cols);
 
-        System.out.println("Среднее арифметическое: " + resultAverage);
+        System.out.println("Среднее арифметическое: " + resultAverage);*/
+
+        // Пузырьковая сортировка
+        int[] numbers = {62, 12, 811, 87, 431, 123, 564};
+        bubbleSort(numbers);
+        for (int num : numbers) {
+            System.out.print(num + " ");
+        }
+    }
+
+    public static void bubbleSort(int[] array) {
+        for (int i = 0; i < array.length - 1; i++) {
+            for (int j = 0; j < array.length - 1; j++) {
+                if (array[j] > array[j+1]) {
+                    int temp = array[j];
+                    array[j] = array[j+1];
+                    array[j+1] = temp;
+                }
+            }
+        }
     }
 }
